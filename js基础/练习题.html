@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//    const obj = {//常量指的是地址不变 不是内容不变
+//        name:'zhangsan',
+//        age:18,
+//    };
+////    Object.freeze(obj);
+//    obj.name = 'lisi';
+//    console.log(obj);
+
+
+//1．随机生成两个小数给变量x.y，然后显示这两个
+// 数中的最大值。（提示：语句“var x=Math.random();
+// ”可为变量生成一个随机小数：另外，使用条件运算符‘'?:")
+        //第三章 三 1
+//        var x = Math.random();//左闭右开
+//        var y = Math.random();
+//        var z = x>y ? x:y;
+//        console.log(x);
+//        console.log(y);
+//        console.log(z);
+
+            function getMax(x,y){
+                return result = x > y ? x : y;
+            }
+            var num1 = Math.random();
+            var num2 = Math.random();
+            var result = getMax(num1,num2);
+            document.write('产生的随机数是' + num1 + '和' + num2 + ',最大值是' + result);
+//        console.log(Math.floor(Math.random() *91 +10));//0-100的随机数
+//        console.log(Math.round(5.1)); //四舍五入
+//        console.log(Math.ceil(5.1));//上取整
+//        console.log(Math.floor(5.1));//下取整
+
+
+    </script>
+</body>
+</html>

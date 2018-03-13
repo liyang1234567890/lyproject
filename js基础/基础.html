@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        //js没有块级作用域
+//        if(false){
+//            var a = 5;
+//        }
+//        console.log(a);
+
+//        for(var i = 0;i<3; i++)
+//        {
+//            console.log('循环内' + i);//0 1 2
+//        }
+//        console.log('循环外' + i);
+//
+//
+//        console.log("1=" + a);// a和function()都会变量提升  但是function比a级别高
+//        var a = 5;             //1=function()
+//        var a = function a(){
+//            console.log("4=" + a);
+//        };
+//        function a(){
+//            console.log("2=" + a);
+//        }
+////        a = 6;
+//        a();
+//        console.log("3=" + a);
+
+
+//        var a = 5;    //1=5 2=6
+//        function foo(){
+//            console.log('1=' + a);
+//            a = 6;
+//            console.log('2=' + a);
+//        }
+//        foo();
+
+
+        var a = 5;    //1=undefined 2=6
+        function foo(){
+          var a;
+            console.log('1=' + a);
+         a = 6;
+            console.log('2=' + a);
+        }
+        foo();
+    </script>
+</body>
+</html>

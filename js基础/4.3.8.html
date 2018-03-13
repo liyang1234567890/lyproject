@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- 8.求所有满足条件的四位数ABCD，它是13的倍数，                                4321
+    且第3位数加上第2位数等于第4位数（即：A=B+C）。                                 A = Math.floor(x / 1000)
+    （提示：对于四位数的整数x，通过Math.floor(x/1000)                              B = Math.floor(x / 100) % 10
+    <!--可求出第4位的数字，其他位数的提取也类似） &ndash;&gt;                     C = Math.floor(x / 10) % 10
+                                                                            <!--   D = x % 10 -->
+
+    <script>
+//       for(var x = 1000;x < 10000; x++){
+//            if((x % 13 == 0) && (Math.floor(x/100) % 10 ) + (Math.floor(x/10) % 10) == Math.floor(x/1000)){
+//            document.write(x + '<br>');
+//           }
+//        }
+
+
+//        function fn1(){
+//            console.log('fn1');
+//            function fn2(){
+//                console.log('fn2');
+//            }
+//            return fn2;  //不是返回函数fn2()  是返回函数声明
+//        }
+//        fn1()(); //fn1() 相当于fn2
+//
+
+        //
+        function a(b){ //b是a函数的形参
+            b(); //相当于1
+        }
+
+        a(function(){   //函数相当于a函数的实参 相当于b
+            console.log(1);
+        });
+    </script>
+</body>
+</html>

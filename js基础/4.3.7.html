@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--7.有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数。-->
+        <script>
+//            var num,a,b,c;
+//            num == a + b * 10 + c * 100;
+//            if(( num % 4 == 2)&&(num % 7 == 3)&&(num % 9 == 5)){
+//                console.log(num);
+//            }
+
+
+
+            for(var num = 100; num < 1000; num++){
+                if( num % 4 == 2&&num % 7 == 3&&num % 9 == 5){
+                    document.write(num + '<br>');
+                }
+            }
+        </script>
+</body>
+</html>

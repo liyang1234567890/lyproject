@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height:200px;
+            background: #ff0000;
+            /*padding:10px;*/
+            /*border:10px solid;*/
+            /*margin-left:10px; !*offset包括内容 padding  margin*!*/
+            position:absolute;
+            top:50px;
+            left:50px;
+        }
+        #div2{
+            width: 400px;
+            height:400px;
+            background: #cccccc;
+            position:relative;
+            top:80px;
+            left:80px;
+        }
+    </style>
+</head>
+    <body>
+    <div id="div2">
+        <div id="div1"></div>
+    </div>
+
+        <script>
+            var oDiv = document.getElementById('div1');
+            //这5个只能取值 不能赋值
+            console.log(oDiv.offsetWidth);
+            console.log(oDiv.offsetHeight);//内容padding border
+
+            console.log(oDiv.offsetLeft);//相对于已经定位里的最近的父级元素
+            console.log(oDiv.offsetTop);
+
+            console.log(oDiv.offsetParent);//已经定位的祖先元素 没有就是body
+
+            //对象。style。属性  赋值
+            //对象。offsetWidth  取值
+        </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        /*#div2{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*background: #ff0000;*/
+        /*}*/
+    </style>
+</head>
+<body>
+      <div id="div1"></div>
+      <ul id="ul1">
+          <li>11</li>
+          <li>22</li>
+          <li>33</li>
+          <li>44</li>
+      </ul>
+
+      <ul id="ul2">
+          <li>11</li>
+          <li>22</li>
+          <li>33</li>
+          <li>44</li>
+      </ul>
+      <script>
+          var oDiv = document.getElementById("div1");
+          console.log(oDiv);
+
+          var oUl = document.getElementById("ul1");
+          console.log(oUl);
+
+          //类数组 .push .pop时会出错
+          var aLi = oUl.getElementsByTagName("li");
+          console.log(aLi);
+
+          var arr = [1,2,3];
+          console.log(arr);
+      </script>
+</body>
+</html>

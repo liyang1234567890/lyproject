@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层</title>
+    <style>
+        /* */
+        *{
+        margin:0;
+        padding:0;
+        }
+        #mask{
+           position:absolute;
+            left:0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity:0.5;
+            /*background: rgba(0,0,0,0.5);*/
+            filter:alpha(opacity = 50);
+        }
+        #content{
+            width: 500px;
+            height: 400px;
+            background:#fff;
+            position:absolute;
+            z-index:1;
+            left:50%;
+            margin-left: -250px;
+            top:50%;
+            margin-top:-200px;
+        }
+
+    </style>
+</head>
+<body>
+        <h1>hehe</h1>
+        <div id="content">
+            hahahaha
+        </div>
+        <div id="mask">
+
+        </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            function add(x,y){//函数声明
+                console.log(x + y);
+            }
+        add(2,3);//函数调用
+
+            var add = function(x,y){//函数直接量
+                console.log(x + y);
+            };
+            add(5,6);
+
+//            var add = function(x,y) {
+//                var result = x + y;
+//            };
+//            add(5,6);
+////            console.log(result);//result只在花括号范围内有作用
+//
+//
+//            var add = function(x,y) {
+//                var result = x + y;
+//                return result;
+//            };
+//            var res = add(5,6);
+//            console.log(res);
+
+            if(isNaN(5)){//5不是NaN 输出2
+                console.log(1);
+            }
+            else{
+                console.log(2);
+            }
+
+            console.log(Math.round(5.5));//四舍五入
+        </script>
+</body>
+</html>
