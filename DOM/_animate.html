@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width:200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+        <button id="btn">开始动画</button>
+        <div id="div1">
+
+        </div>
+        <script scr="wichuang-1.0.js"></script>
+        <script>
+            var oDiv1 = id('div1');
+            var oBtn = id('btn');
+            oBtn.onclick = function (){
+                animate(oDiv1, {
+                    width: 500
+                },function(){
+                    animate(oDiv,{
+                        height:500
+                    });
+                });
+            };
+        </script>
+</body>
+</html>

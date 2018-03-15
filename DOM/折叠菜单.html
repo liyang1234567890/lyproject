@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+        <div id="div1">div1
+            <div id ="div3">div3</div>
+        </div>
+        <script>
+            var oDiv1 = document.getElementById('div1');
+            var oDiv3 = document.getElementById('div3');
+            var oDiv2 = document.createElement('div');
+
+            oDiv2.innerHTML = 'div2';
+            //oDiv1.appendChild(oDiv2);//追加孩子div2  插入到当前元素的最后面
+
+       //     oDiv1.insertBefore(oDiv2,oDiv3);//将div2插入到div3的前面
+//           oDiv1.removeChild(oDiv3);
+
+         // oDiv1.replaceChild(oDiv2,oDiv3);//用div2代替div3
+
+
+       //     oDiv1.appendChild(oDiv3.cloneNode());//将div3复制到div1中
+
+            console.log(oDiv3.nodeName);//div
+
+//            oDiv1.xx = 5;  //不会加在网页中
+//            console.log(oDiv1.xx);
+            oDiv1.setAttribute('xx',5);  //会加在网页中
+            console.log(oDiv1.getAttribute('xx'));
+            //已经存在的属性用.Attribute
+            //不存在的用 object 点 属性
+        </script>
+</body>
+</html>

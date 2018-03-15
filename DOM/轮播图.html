@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            border:0;
+        }
+        #container{
+            width: 520px;
+            height: 280px;
+            position: relative;
+            margin:100px auto;
+            overflow:hidden;
+        }
+        #tab{
+            height: 20px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            list-style:none;
+        }
+       #tab li, #arrows span{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color:#fff;
+            cursor:pointer;
+            text-align:center;
+            line-height: 20px;;
+            float:left;
+           margin-right:5px;
+        }
+        #tab .selected{
+            background: orange;
+        }
+        #arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 20px;
+        }
+        #imgs{
+           width: 2080px; /*一个520*/
+        }
+        #imgs img{
+            float:left;
+            /*width:520pbx;*/
+            popsition:absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+        <div id="container">
+            <div id="imgs">
+                <img src = "img/1.jpg" alt="">
+                <img src = "img/2.jpeg" alt="">
+                <img src = "img/3.jpg" alt="">
+                <img src = "img/4.jpg" alt="">
+            </div>
+            <ul id="tab">
+                <li class ="selected">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <div id="arrows"><!--箭头-->
+                <span id="prev">&lt;</span>
+                <span id="next">&gt;</span>
+            </div>
+        </div>
+        <script scr="wichuang-1.0.js"></script>
+        <script>
+            var oTab = document.getElementById('tab');
+            var aLi = oTab.children;
+            var oImgs = id('imgs');
+//            console.log(aLi);
+            for(var i=0;i<aLi.length; i++){
+                aLi[i].onmouseover = function(){
+                    for(var i=0; i<aLi.length; i++){
+                        aLi[i].className = '';
+                    }
+                    this.className = 'selected';
+
+                    //图片切换
+                    animate(oImgs,);
+                };
+            }
+        </script>
+</body>
+</html>
