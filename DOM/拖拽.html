@@ -26,16 +26,13 @@
         oDrag.onmousedown = function(e){ //按下
             e = e || window.event;
 //            console.log(e.clientX + ',' + e.clientY);
-            var iDisX = e.clientX -
-
-
-                oDrag.offsetLeft;//鼠标相对于红框的宽
+            var iDisX = e.clientX - oDrag.offsetLeft;//鼠标相对于红框的宽
             var iDisY = e.clientY - oDrag.offsetTop;//鼠标相对于红框的高
 
             oDrag.onmousemove = function(){
                 e = e || window.event;
                 oDrag.style.left = e.clientX  - iDisX + 'px';
-                oDrag.style.top  = e.clientY  - iDisY + 'px';
+                oDrag.style.top  = e.clientY  - + 'px';
             }
         };
 </script>
