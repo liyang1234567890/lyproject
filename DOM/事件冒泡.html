@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ul1 li{
+            background: #ffff00;
+            color:#f00;
+            list-style:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <!--点击哪个出哪个-->
+        <ul id="ul1">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+            <li>004</li>
+            <li>005</li>
+        </ul>
+        <script>
+            var oUl = document.getElementById('ul1');
+            var oLi = oUl.getElementsByTagName('li');
+            for(var i=0; i<oLi.length; i++){
+                oLi[i].onclick = function (){
+                    console.log(this.innerHTML );  //oLi[i]输出undefined    this.innerHTML this输出<li>001</li>
+                };
+            }
+
+            //把子元素统一放在父元素上 叫事件委托/d代理
+
+//            oA.addEventListener('click',function(e){
+//                        console.log('a');
+//                        e.stopPropagation();
+//                    },false);
+
+//            oUl.onclick = function(){ //点击li  输出ul
+//                //事件源是li 但是li冒泡给ul了 ul将li覆盖 输出ul
+//                console.log(this);
+//            };
+
+            oUl.onclick = function(e){
+                console.log(e.target);//找到事件源
+            };
+
+            //标准浏览器
+            oUl.onclick = function(e){//IE没有e
+                if(e){
+                    target = e.target;
+                }else{
+                    target = window.event.srcElement;
+                }
+                console.log(target.innerHTML);//找到事件源
+            };
+        </script>
+</body>
+</html>

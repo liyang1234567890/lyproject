@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+    </style>
+</head>
+<body>
+        <!--点一次按钮 增加一条-->
+        <button id="btn">增加</button>
+        <!--ul#ul1>li{$$$}*5-->
+        <ul id="ul1">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+            <li>004</li>
+            <li>005</li>
+        </ul>
+        <script>
+            var oUl = document.getElementById('ul1');
+            var oLi = oUl.getElementsByTagName('li');
+            var oBtn =  document.getElementById('btn');
+
+//            for(var i=0; i<oLi.length; i++){
+//                oLi[i].onclick = function (){
+//                    console.log(this.innerHTML);  //oLi[i]输出undefined    this.innerHTML this输出<li>001</li>
+//                };
+//            }
+
+            oBtn.onclick = function(){ //想增加新的li 先创建li
+                var oLi = document.createElement('li');
+                oLi.innerHTML = Math.random();
+                oUl.appendChild(oLi);
+            };
+
+
+            //但是现在点击新增加的条 不输出内容
+            //所以用 事件委托
+
+            oUl.onclick = function(e){//e是this 是ul
+//                this === e.target 触发得到的
+//                this != e.target 由事件冒泡 或 事件捕获而来的
+                console.log(e.currentTarget);//this  输出ul
+                console.log(e.target);//事件源  输出点击的东西
+
+//                var target = e ? e.target : window.event.srcElement;
+//                //点击点和li之间的空 输出整个ul 所以判断一下
+//                if(target != this){//target两种情况 ul  li
+//                    console.log(target.innerHTML);
+//                    //点击空 什么也不输出
+//                }
+            };
+
+            //封装函数
+            oDiv1.onclick = function(){};
+
+            addEvent(oDiv1,'click',function(){
+                alert('123');
+            });
+            function addEvent(elem,type,handler){
+                if(elem.addEventListener){
+                    elem.addEventListener(type,type,handler);//handler默认是false
+                }else if(elem.attachEvent){//IE
+                    elem.attachEvent('on' + type,handler);
+                }else{//onclick触发得到
+//                    elem.'on'+type = handler;   不行
+                    elem['on'+type] = handler;
+                }
+            }
+
+            var obj = {
+                name:'lisi',
+                age:18
+//                n:'nnn'
+            };
+//            var n = 'name';
+            console.log(obj.name); //lisi
+            console.log(n);//undefined  因为对象中没有交n的属性
+            //属性名 n 是变量 取属性时时用【】
+            console.log(obj[n]); //lisi
+            console.log(obj[name]);//undefined  name是变量   变量name现在没有赋值 就是一个变量命名  相当于obj[undefined]
+            console.log(obj['name']);//可以
+        </script>
+</body>
+</html>
+<!--
+事件委托： 利用事件冒泡 将子元素委托给父元素绑定
+
+绑定事件的几种方式
+1.div1.onclick = function(){}; 单是这种方法输出的内容后一个会将前一个覆盖
+2.事件监听 oDiv1.addEventListener('click',function(){},false);
+    false 表示事件冒泡 水泡从里往外冒
+    true 表示事件捕获 l捞鱼从水面往里
+    先捕获 后冒泡
+
+    早期IE 只支持冒泡 attachEvent('onclick',function(){});
+    问题1：执行顺序与定义的顺序是相反的
+    问题2：this => window this不指向绑定的事件对象 指向window
+
+事件冒泡可以解决的问题
+1.事件委托/代理
+    子元素太多没效率
+    后生成的元素 点击并不输出 所以委托给父元素
+-->

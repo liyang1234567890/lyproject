@@ -1,10 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 300px;
+            height: 300px;
+            background: #00ff00;
+        }
+        #div3 {
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+        }
+    </style>
 </head>
-<body>
+<body id="body">
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var oDiv3 = document.getElementById('div3');
+        var oBody = document.getElementById('body');
+        var oHtml = document.getElementById('html');
+        //点击红色 div1
+        //点击绿色 div2 div1
+        //点击黄色 div3 div2 div1
+        //事件冒泡 一层一层往外传播
+//        oDiv1.onclick = function(){
+//            console.log('div1');
+//        };
+//        //输出div11  后定义的会把先定义的覆盖掉
+//        oDiv1.onclick = function(){
+//            console.log('div11');
+//        };
+//        oDiv1.onclick = function(){
+//            console.log('div111');
+//        };
+//
+//        oDiv2.onclick = function(){
+//            console.log('div2');
+//        };
+//        oDiv3.onclick = function(){
+//            console.log('div3');
+//        };
+//        oBody.onclick = function(){
+//            console.log('body');
+//        };
+//        oHtml.onclick = function(){
+//            console.log('html');
+//        };
+        //再点击黄色 div3 div2 div1 body html 过程叫事件冒泡
+        //div3叫事件源
 
+
+//        //输出div1  div11没有被覆盖 并且输出顺序就是被定义的顺序
+//        oDiv1.addEventListener('click',function(){ //有兼容性无问题
+//            console.log('div1');
+//        });//监听 去掉on
+//        oDiv1.addEventListener('click',function(){
+//            console.log('div11');
+//        });
+//        oDiv1.addEventListener('click',function(){
+//            console.log('div111');
+//        });
+
+
+//        //点击黄色 还是div3 div2 div1 第三个参数不写的话 默认值是false
+//        oDiv1.addEventListener('click',function(){ //有兼容性无问题
+//            console.log('div1');
+//        },false);//监听 去掉on
+//        oDiv2.addEventListener('click',function(){
+//            console.log('div2');
+//        },false);
+//        oDiv3.addEventListener('click',function(){
+//            console.log('div3');
+//        },false);
+
+
+//        oDiv1.addEventListener('click',function(e){ //有兼容性无问题
+//            console.log('div1');
+//            e.stopPropagation();
+//        },true);//监听 去掉on
+//        oDiv2.addEventListener('click',function(e){
+//            console.log('div2');
+//            e.stopPropagation();
+//        },true);
+//        oDiv3.addEventListener('click',function(e){
+//            console.log('div3');
+//            e.stopPropagation();
+//        },true);
+        //true的话 add() 从外往里捕获
+        //点击什么颜色 都输出div1 因为从外往里捕获
+        // 点击黄色 红色 也是从红色开始捕获 在div1那里被终止了
+        // stop() 终止捕获  先捕获后冒泡 没经历冒泡过程 都输出div1
+
+//        //标准浏览器下的方法 chrome不适用
+//        oDiv1.attachEvent('onclick',function(){
+//            console.log('div1');
+//            window.event.cancelBubble = true;//终止捕获 点击啥色出啥色
+//
+//        });//有on
+//        oDiv2.attachEvent('onclick',function(){
+//            console.log('div2');
+//        });
+//        oDiv3.attachEvent('onclick',function(){
+//            console.log('div3');
+//        });
+
+        //封装函数
+        oDiv1.onclick = function(){};
+
+        addEvent(oDiv1,'click',function(){
+            alert('123');
+        });
+        function addEvent(elem,type,handler){
+            if(elem.addEventListener){
+                elem.addEventListener(type,type,handler);//handler默认是false
+            }else if(elem.attachEvent){//IE
+                elem.attachEvent('on' + type,handler);
+            }else{//onclick触发得到
+//                    elem.'on'+type = handler;   不行
+                elem['on'+type] = handler;
+            }
+        }
+
+//        var obj = {
+//            name:'lisi',
+//            age:18
+////                n:'nnn'
+//        };
+//        //            var n = 'name';
+//        console.log(obj.name); //lisi
+//        console.log(n);//undefined  因为对象中没有交n的属性
+//        //属性名 n 是变量 取属性时时用【】
+//        console.log(obj[n]); //lisi
+//        console.log(obj[name]);//undefined  name是变量   变量name现在没有赋值 就是一个变量命名  相当于obj[undefined]
+//        console.log(obj['name']);//可以
+    </script>
 </body>
 </html>
+<!--
+addEventListener(事件类型type,事件处理函数,false/true)
+false 事件冒泡 从里往外传
+true 事件捕获 从外往里
+-->
+<!--
+stopPropagation()   点击啥就是啥  不会冒泡传播了
+终止事件在传播过程中的捕获 目标处理或起泡阶段进一步传播
+调用该方法后 该节点上处理事件的处理程序将被调用
+事件不再被分派到其他节点
+-->
+<!--
+先捕获 后面冒泡
+早期IE 不支持事件捕获 只支持冒泡 attachEvent()
+问题1：attachEvent()  输出顺序 和 被定义的顺序相反
+问题2; this指向window  不是事件源
+ window.event.cancelBubble = true; 终止捕获
+-->

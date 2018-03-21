@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+        <input type="text" id="search" value="123">
+        <!--输入什么  列表中对应的颜色改变-->
+        <ul id="list">
+            <li>iphone8</li>
+            <li>iphoneX</li>
+            <li>huawei</li>
+            <li>xiaomi</li>
+        </ul>
+        <script src="jquery-3.3.1.js"></script>
+        <script>
+            $(function(){
+                var $Lis = $('#list li');
+                $('#search').on('keyup',function(){//keyup当前值
+                   // console.log(this.value);//原生方法  效率高
+                  //  console.log($(this).val());//jq方法'
+                    $('#list li').css('background','transparent');
+                    if(this.value != ''){
+                        //this.value 要字符串拼接 $('#list li:contains(this.value)') 不行得把this.value字符串拼接
+                        $('#list li:contains('+ this.value +')').css('background','red');
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

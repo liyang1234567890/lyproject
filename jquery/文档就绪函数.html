@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+        <script>
+            //当dom 图像加载完成 已经完全呈现时 发生ready()
+            //因为ready()最后执行 所以将其他函数事件放在ready()中
+            $(document).ready(function(){
+                var a = 5;
+            });
+
+            //是上面的缩写形式
+            $(function(){
+
+            });
+
+
+        </script>
+</body>
+</html>

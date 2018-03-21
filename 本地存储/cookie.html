@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            var timer = new Date();
+            timer.setDate(timer.getDate()+10);
+           // console.log(timer.setDate
+            document.cookie="schoole=heida;expires="+timer.toUTCString();
+            document.cookie="home=heb;expires="+timer.toUTCString();
+//            document.cookie="schoole=aa";//把之前的覆盖了
+//            console.log(document.cookie);
+//            timer.setDate(timer.getDate()-11);
+//            document.cookie="schoole=heida;expires="+timer.toUTCString();
+//            console.log(document.cookie);
+            var arr = document.cookie.split(";");
+            console.log(arr[0].split(";"));//把字符串分成字符串数组
+            console.log(document.cookie.split(";"));
+        </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    list-style:none;
+}
+ul li{
+    float:left;
+}
+.slider-box{
+    position: relative;
+    width: 520px;
+    height: 280px;
+}
+.slider-img li{
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+.slider-nav{
+    position:absolute;
+   right:10px;
+    bottom: 10px;
+}
+.slider-btn{
+    position:absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.silider-nav li,btn li{
+    height: 0;
+   width: 0;
+    background-color: black;
+    color:white;
+    line-height:0;
+    text-align: center;
+    margin-left:10px;
+}
