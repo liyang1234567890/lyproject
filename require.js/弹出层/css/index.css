@@ -1,0 +1,61 @@
+*{
+    margin:0;
+    padding:0;
+}
+/*body,html{*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*}*/
+body{
+    height: 2000px;
+}
+.dialog-mask{
+    /*width: 100%;  !*宽高100% 是相对于父元素*!*/
+    /*body现在是一行open  所以要给body设置*/
+    /*body的父元素是html 也要设置宽高*/
+    /*height: 100%;*/
+
+    background: #cccccc;
+    opacity: 0.6;
+    filter:alpha(opacity=60);
+    position:fixed;  /*body是height2000
+                        mask相对于body是2000 所以产生了
+                        滚动条 2000之后是白色
+                        fixed也有滚动条 所有都是白色*/
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.dialog-box{
+    width: 500px;
+    height: 400px;
+    background: #fff;
+    position:absolute;
+    top:50%;
+    left:50%;
+    /*margin-top:-200px;  !*在往上动自己高度的一半*!*/
+    /*margin-left:-250px;!*在往左动自己高度的一半*!*/
+    transform:translate(-50%,-50%);
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+.dialog-tittle{/*想让tittle背景是黑色
+                    但是mask有一层遮罩层
+                    所以要设置层级
+                    父元素透明 子元素也会透明
+                    所以设层级没有用
+                    直接把mask box变成兄弟*/
+    height: 30px;
+    color:white;
+    background: #000;
+    line-height:30px;
+    padding:0 10px;  /*上下 左右*/
+}
+.dialog-name{
+    float:left;
+}
+.dialog-close{
+    float:right;
+    cursor:pointer;
+}
