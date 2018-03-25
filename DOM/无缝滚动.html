@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       *{
+           margin:0;
+           padding:0;
+       }
+        li{
+            list-style:none;
+        }
+        #tab li{
+            width: 100px;
+            height: 100px;
+            background: #000;
+            color: #ffffff;
+            float:left;
+            font-size:40px;
+            text-align:center;
+            line-height:100px;
+            margin-right:10px;
+        }
+        .container{
+            width: 320px;
+            height: 200px;
+            margin:100px auto;
+            border:1px solid black;
+            overflow:hidden;
+            position:relative;
+        }
+        #tab{
+            width: 440px;
+            height: 100px;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #arrows span{    /*行级元素不能设置大小*/
+            width: 60px;
+            height: 20px;
+            background: #cccccc;
+            float:left;/*浮动可以设置大小了*/
+            text-align:center;
+            line-height:20px;
+            margin-right:5px;
+            cursor:pointer;
+        }
+        #arrows{
+            position:absolute;
+            bottom:30px;
+            left:50%;
+            margin-left:-65px;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <ul id="tab">  <!--内容-->
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <diiv id="arrows">
+                <span id="left">向左</span>
+                <span id="right">向右</span>
+            </diiv>
+        </div>
+        <script>
+                 var oTab = document.getElementById('tab');
+                 var oLeft = document.getElementById('left');
+                 var oRight = document.getElementById('right');
+                 var direction = 10;
+                 oTab.innerHTML += oTab.innerHTML;
+                 oTab.style.width = oTab.offsetWidth * 2 + 'px';
+                 setInterval(function(){
+                     oTab.style.left = oTab.offsetLeft - direction + 'px';
+                     if(-oTab.offsetLeft >= oTab.offsetWidth / 2){  //440
+                         oTab.style.left = 0;
+                     }
+                     if(oTab.offsetLeft > 0){  //不能加等号 两者不能有交集 否则不动
+                         //oTab.style.left是相对于oTab左上角的距离             //-430
+                         oTab.style.left = -oTab.offsetWidth / 2  - direction + 'px';//负号是因为要往左移动
+                     }
+                 },200);
+
+                 oLeft.onmouseover = oRight.onmouseover = function(){
+                        if(this === oLeft){
+                            direction = 10;
+                        }else{
+                            direction = -10;
+                        }
+                 };
+        </script>
+</body>
+</html>

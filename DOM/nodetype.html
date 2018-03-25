@@ -4,7 +4,55 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
 
+        <div id="div1">div1</div>
+        <div id="div2">div2</div>
+         <ul id="ul1">
+             <li>001</li>
+             <li>002</li>
+             <li>003</li>
+             <li>004</li>
+         </ul>
+
+        <h1>h1h1h1</h1>
+        <div>divdivdiv</div>
+        <script>
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var oUl1 = document.getElementById('ul1');
+            //非标准浏览器
+            console.log(oDiv1.nextSibling.id);// undefined
+            //标准浏览器
+            console.log(oDiv1.nextElementSibling.id);
+            //非标准浏览器
+            console.log(oDiv2.previousSibling.id);
+            //标准浏览器
+            console.log(oDiv2.previousElementSibling.id);
+
+            console.log(oUl1.firstElementChild);
+            console.log(oUl1.lastElementChild);
+            console.log(oUl1.children);
+            // text文本节点 nodetype是3
+
+//            var oH1 = document.getElementById('h1');
+//            console.log(next(oH1));
+
+            var oUl = document.getElementById('ul1');
+            console.log(first(oUl));
+             //找到aelem的兄弟节点   封装   元素nodetype是1
+            //要起码找一次 才能知道兄弟是谁 do while循环
+            function next(elem){
+                do{
+                    elem = elem.nextSibling;
+                }while(elem && elem.nodeType != 1);
+                return elem;
+            }
+
+            //找到第一个孩子元素
+            function first(elem){
+               elem = elem.firstChild;
+               return elem.nodeType == 1 ? elem :next(elem);
+            }
+        </script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+       <script>
+           var user = {
+               name:"xiaoming",
+               age:"17",
+               school:"heida"
+           }
+           var str = JSON.stringify(user) ;
+           console.log(str);  //对象转化成字符串
+//           var obj = eval(str);
+//           var obj = JSON.parse(str);
+//           console.log(obj); //字符串转化成对象
+           //eval("while(true){alert('1')}")//把字符串格式变成对象格式
+
+//           var user = {
+//               name:"xiaoming",
+//               age:"17",
+//               home:"广州",
+//               hobby:["film","lvyou"],
+//               sister:{
+//                        sister1:{
+//                            name:"xiaofen",
+//                            age:"24",
+//                            job:"nurse"
+//                        },
+//                   sister:{
+//                            name:"xiaofang",
+//                            age:"23",
+//                            job:"teacher"
+//                   }
+//             }
+//           }
+//           JSON.stringify(user);
+
+        //基本数据类型赋值只是把值付过去  栈内存
+           //引用数据类型 堆内存
+
+           var obj = {
+               name:"xx",
+               age:"11"
+           };
+//           obj.name = "xx";
+//           var obj1 =  obj;  //浅拷贝
+//           console.log(obj1);
+
+//           var obj1 = {}; //开辟新空间 把值一个一个存在里面 2个对象
+//           obj1.name = obj.name;  //深拷贝
+//           obj1.age = obj.age;
+//           obj.name="xiaoming";
+//           console.log(obj1);
+//           console.log(obj);
+
+           var obj = {
+               name:"xx",
+               age:"11",
+               school:"heida"
+           };
+
+           var obj1={};
+           function clone(obj){
+               for( var a   in  obj   ){
+                    console.log(a);
+                    obj1[a]=obj[a];
+               } console.log(obj1);
+           }
+
+
+
+           var user = {
+               name: "xiaoming",
+               age: "17",
+               home: "广州",
+               hobby: ["film", "lvyou"],
+               sister: {
+                   sister1: {
+                       name: "xiaofen",
+                       age: "24",
+                       job: "nurse"
+                   },
+
+               }
+           };
+//           clone(obj);
+//           obj.name = "小明";
+//           obj.sister.sister1.name="小芳";
+       </script>
+</body>
+</html>
