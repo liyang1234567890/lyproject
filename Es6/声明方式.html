@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <ul id="ul1">
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+                <li>004</li>
+            </ul>
+               <script>
+            //var  variable
+
+//            var a = 5;//局部
+//            console.log(a);
+//            a = 5; //全局
+//            console.log(a);
+
+//             var a = 5;
+//             function foo(){//foo 无意义
+//                console.log(a);//5
+//                a = 6;
+//             }
+//             foo();
+
+//              var a = 5;
+//              function foo(){
+//                  console.log(a);//undefined
+//                  var  a = 6;
+//
+//                 //var变量提升 相当于
+//                 //var a;
+//                  //console.log(a);
+//                  //a = 6;
+//              }
+//              foo();
+
+//              console.log('1=' + a);//function
+//              var a = 5;
+//              function a(){//function也会变量提升 预定义 比变量的优先级更高
+//                  console.log('2=' + a );
+//              }
+//              a = 6;
+//              console.log('3=' + a);//就近原则 6
+//              a();//a是6  6（）肯定报错
+
+//              foo(); //function会预定义 先调用后调用都行
+//              function foo(){
+//                  console.log(123);
+//              }
+
+
+//              var foo = function(){ //只能先定义后调用
+//                  console.log(456);
+//              }
+//              foo();
+
+//            var a = 5;
+//            function foo(){
+//                console.log(a);//两个a 重复了 undefined
+//
+//                if(false){
+//                    var a = 6;
+//                }
+//            }
+//            foo();
+
+//              for(var i=0; i<3; i++){
+//
+//              }
+//              console.log(i);//3
+
+//            var a = 5;
+//            var a = 6;
+//            console.log(a);//6
+
+//            let a = 5;
+//            function foo(){
+//                console.log(a);
+//                let a = 6;//3.暂时性死区 在let定义的变量之前 这个变量不能被调用
+//            }
+//            foo();
+
+//            console.log(a);
+//            a = 5;//报错 a没被定义
+
+//            console.log(a);
+//            var a = 5; //变量提升 undefined
+
+//            console.log(a);//1.let不能变量提升
+//            let a = 5;//报错 a没被定义
+
+//            if(true){
+//                throw new Error('我要抛出异常啦');
+//            }
+
+            //            let a = 5;
+            //            let a = 6;
+            //            console.log(a);//2.let不能被重复声明
+
+//            let a = 5;
+            //            function foo(){
+            //                console.log(a);//5
+            //                if(true){
+            //                    let a = 6;//4.let块级作用域 只在if里面好使
+            //                }
+            //            }
+            //            foo();
+
+//            for(let i=0; i<3; i++){
+//                //块级作用域
+//            }
+//            console.log(i);//i没被定义
+
+                  var oUl =document.querySelector('#ul1');
+                  var aLi = document.querySelectorAll('#ul1 li');
+//                   oUl.onclick = function(e){
+//                       console.log(e.target);
+//                   };
+
+
+//            for(var i=0;i<aLi.length;i++){
+//
+//                aLi[i].onclick = function() {
+//                    console.log(i); //4
+//                };//其实只有一个i i被赋了4次值 变量被释放
+                   // for循环结束又执行一次++ 输出4
+//            }
+//                 //给每个li自定义属性
+//                   for(var i=0;i<aLi.length;i++){
+//                       aLi[i].index = i;
+//                       aLi[i].onclick = function() {
+//                           console.log(this.index);
+//                       };
+//                   }
+
+                   //2.闭包
+                  //外部函数里面有个内部函数
+                  // 内部函数调用外部函数的变量
+                  //外部函数的变量不会被释放掉
+//                   for(var i=0;i<aLi.length;i++){
+//                       (function(idx){//两个括号包起来的 立即调用 idx形参
+//                            aLi[idx].onclick = function(){
+//                                console.log(idx);
+//                            };
+//                       })(i);//实参
+//                   }
+
+//                   //let可以形成闭包
+            //                   for(let i=0; i<aLi.length;i++){
+            //                       aLi[i].index = i;
+            //                       aLi[i].onclick = function(){
+            //                           console.log(i);
+            //                       };
+            //                   }
+
+//                   var arr = [];
+//                   for(var i = 0;i < 5 ; i++){
+//                       arr[i] = function(){//数组中每一项都是function
+//                           console.log(i);  //function()这里只是定义
+//                       };
+//                   }
+//                   arr[3]();// 数组是个function() 这里才是function()调用执行
+//                   //for循环结束再调用 i是5  和3没有关系
+
+//                    let arr = [];
+//                    for(let i = 0;i < 5 ; i++){
+//                        arr[i] = function(){//数组中每一项都是function
+//                            console.log(i);  //function()这里只是定义
+//                        };//3
+//                    }
+//                    arr[3]();
+
+//                   if(true){//js没有块级作用域
+//                       var a = 5;
+//                   }
+//                   console.log(a);
+
+//                   //闭包是有权访问另一个函数作用域中变量的函数
+//                   function a(){
+//                       var num = 5;
+//                       return num;
+//                   }
+//                   var n = a();
+//                   console.log(n);//5
+
+                   //const
+//                   const a = 5;
+//                   a = 6;
+//                   console.log(a);//报错
+
+//                   const obj = {
+//                       name:'liyang',
+//                       age:18
+//                   };
+//                   console.log(obj);
+//                   Object.freeze(obj);//冻结 没有改变 两个都是liyang
+//                   obj.name = 'xianggaoqiang';
+//                   console.log(obj);
+//                   //const不是变量的值不改动 是变量指向的那个内存地址不改动
+
+
+//                   obj = {
+//                       name:'lisi'
+//                   };//new一个对象 新开辟出一块空间 obj内存地址改变了 报错
+//                   console.log(obj);
+
+                   const arr = [1,2,3,4];
+                   console.log(arr);
+                   arr.push(5);
+                   console.log(arr);//12345
+        </script>
+</body>
+</html>

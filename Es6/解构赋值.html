@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+//            let arr =[1,2,3];
+//            let a = arr[0];
+//            let b = arr[1];
+//            let c = arr[2];
+//            console.log(a,b,c);//1 2 3
+
+//            let [a,b,c] = [1,2,3];
+//            console.log(a,c,b);//1 3 2 数组的索引是一一对应的
+
+//            let [a,b,[c,d],e] = [1,2,[3,4],5];
+//            console.log(a,b,c,d,e);
+
+//                let [a,b,[c],e] = [1,2,[3,4],5];//解构要一一对应
+//                console.log(a,b,c,e);//1 2 3 5
+
+//                let [a,b,c,e] = [1,2,[3,4],5];//解构要一一对应
+//                console.log(a,b,c,e);//1 2 【3，4】 5
+
+//                 let obj = {
+//                     name:'ws',
+//                     age:18
+//                 };
+//
+//                 let name = obj.name;
+//                 let age = obj.age;
+//                 console.log(name,age);
+
+//                 //结构赋值
+//                let{name,age} = {
+//                    name:'zs',
+//                    age:18
+//                };
+//                console.log(name,age);
+
+//                let{age,name} = {
+//                    name:'zs',
+//                    age:18
+//                };//as 18 对象赋值和数组不一样
+//                console.log(name,age); //看的不是位置顺序 看名字
+
+//              let{a,b} = {
+//                  name:'liyang',
+//                  age:18
+//              };                 //名字不同
+//              console.log(a,b);//undefined undefined
+
+//                    let{name:a,age:b} = {//相当于起了两个小名
+//                        name:'liyang',
+//                        age:18
+//                    };
+//                    console.log(a,b);
+
+            //字符串
+//            let str = 'hello world';
+////            let a = str.charAt(0);
+//            let a = str[0];
+//            console.log(a);//h
+           //解构
+//            let str = 'hello';
+//            let[a,b,c,d,e] = str;
+//            console.log(a,b,c,d,e);
+//            console.log(a);
+
+//            //函数参数解构
+//            function foo([x,y]){//形式一致
+//                return x + y;
+//            }
+//            let arr = [5,6];
+//            console.log(foo(arr)); //11
+//            foo(arr);
+
+//            function sum([x,y]){//形式一致
+//                      return x + y;//x是5 y是undefined
+//                   }
+//                  let arr = [5];
+//                  console.log(sum(arr));//NaN
+
+//            function sum([x = 0,y = 0]){
+//                return  x + y;
+//            }
+//            let arr = [5];
+//            console.log(sum(arr));//5
+
+//            function foo(){
+//                console.log(123);
+//            }
+//            let [a=foo()] = [1];//后面有值 1 什么也不输出 没有值输出和默认值
+
+           //函数参数的解构赋值
+//            function foo({name,age,school='xx大学'}){
+//                console.log(name,age,school);
+//            }
+//            let obj = {
+//                name:'zs',
+//                age:18,
+//                school:'齐大'
+//            };
+//            foo(obj);
+
+//            function foo(){
+//                return [1,2,3,4];
+//            }
+//
+//            let[a,b,c,d] = foo();
+//            console.log(a);
+
+//             //返回对象
+//            function foo(){
+//                let obj = {
+//                    name:'zs',
+//                    age:18
+//                };
+//                return obj;
+//            }
+//            let {namae,age} = foo();
+//            console.log(foo());
+
+            //交换两个数的值
+//            let a = 5;
+//            let b = 6;
+//            a = a + b;//a = 11
+//            b = a - b;//b = 5
+//            a = a - b;//a = 6
+
+
+//            [b,a] = [a,b];
+//            console.log(a,b);//6  5
+
+//            a = [b,b=a][0];//前面是数组 后面是下标
+//                           //将数组里面的第一个元素b赋给a
+//            console.log(a,b);// 6 5
+
+//            let arr = [4,6,c=5];
+//            console.log(arr,c);//[4 6 5] 5
+
+            //json是前后交换的一种数据格式
+            let json = '{"a":"hello","b":"world"}';
+//            let [a,b,c,d,e] = json;
+//            console.log(a,b,c,d,e);//{"a": 当成字符串解构
+            let{a,b} = JSON.parse(json);
+            console.log(a,b);//hello world
+        </script>
+</body>
+
+</html>

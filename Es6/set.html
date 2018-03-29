@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        let s1 = new Set([1,2,3,4,5,1,2,3]);
+//        console.log(s1);
+//        console.log(s1.size);
+        //set是集合 里面的东西不能重复
+        let s1 = new Set([1,2,3,4,5,1,2,3]);//不会报错 会把重复的自动去掉
+
+     //数组去重 笨方法
+        let arr = [123,123,234,234,455];
+//        let newArr = [];
+//        for(let item of arr){
+//            if(!newArr.includes(item)){
+//                newArr.push(item);
+//            }
+//        }
+//        console.log(newArr);
+//        console.log(new Set(arr));//集合
+//        console.log(Array.from(new Set(arr)));//数组
+//        s1.add(6);
+//        s1.add(1);
+//        s1.delete(2);
+//        console.log(s1);
+//        console.log(s1.has(3));//true
+//        s1.clear();
+//        console.log(s1);
+
+//        for(let [index,item] of s1.entries()){
+//            console.log(index,item);
+//        }//1 1   2 2   3 3   4 4   5 5 sset的下标和Key值一样 可以做到去唯一值
+
+          let ws = new WeakSet();//weakset()只能add()加进来
+          let obj1 = {name:'zs',age:18};
+          ws.add(obj1);
+          let obj2 = obj1;
+          ws.add(obj2);
+          let obj3 = {name:'zs',age:18};
+          ws.add(obj3);
+          console.log(ws);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        let obj = {
+//            0:'zs',
+//            true:18,
+//            [{name:'zs'}]:'xx'
+//        };
+//        console.log(obj['0']);
+//        console.log(obj['true']);
+        let m1 = new Map();
+        m1.set(1,'zs');//set用add()  map用set()
+        let obj = {name:'zs'};//新加的键
+        m1.set(obj,'xx'); //新赋的值
+        console.log(m1);
+        console.log(m1.get(obj));
+
+        for(let [index,item] of m1.entries()){
+            console.log(index,item);
+        }
+
+        let wm = new WeakMap();
+//        wm.set('xx','yy');//不行
+        wm.set({},'yy');// 键 值  键不能是null
+        wm.set({},'zz');
+        console.log(wm);
+    </script>
+</body>
+</html>c

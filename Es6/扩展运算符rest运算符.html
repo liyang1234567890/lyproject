@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <!--6.解构-->
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+
+        <script>
+//            function foo(){
+//                console.log(arguments[0],arguments[1]);
+//            }
+//            foo(5,6,7,8);//5 6
+
+//            function foo(){
+//                console.log(arguments);
+//            }
+//            foo(5,6,7,8);
+
+//            //1.扩展运算符 不确定参数
+//            function foo(...arg){
+//                console.log(arg);
+//            }
+//            foo(5,6,7,8);//5 6 7 8
+//            foo(5,6,7,8,9);//5 6 7 8 9
+//
+//            //2.作为数组的一部分
+//            let arr1 = [1,2];
+//            let arr2 = [3,4];
+//            let arr3 = [3,...arr1,4];
+//            console.log(arr3);//3 1 2 4
+
+            //3.数组复制
+//            let arr1 = [1,2];
+//            let arr2 = arr1;
+//            arr1.push(3);
+//            console.log(arr2);//1 2 3
+
+//            let arr1 = [1,2];
+//            let arr2 = [...arr1];
+//            arr1.push(3);
+//            console.log(arr1);//1 2 3
+//            console.log(arr2);//1 2
+
+            //4.合并数组
+//            let arr1 = [1,2];
+//            let arr2 = [3,4];
+//            let arr3 = [...arr1,...arr2];
+//            let arr3 = arr1.concat(arr2);//连接数组 返回结果
+//            console.log(arr3);//1 2 3 4
+
+            //5.合并对象
+//            let obj1 = {
+//                name:'zs',
+//                age:18
+//            };
+//            let obj2 = {
+//                name:'lisi',
+//                school:'xx'
+//            };
+//            let obj3 = {...obj1,...obj2};
+//            console.log(obj3);//lisi
+
+//            let aDiv = document.querySelectorAll('div');//nodelist
+//            console.log(aDiv);//类数组
+//            let arr = [...aDiv];
+//            console.log(arr);//数组
+//            //解构
+//            let [div1,div2,div3] = [...aDiv];
+//            console.log(div1,div2,div3);
+
+
+            //rest运算符
+            function foo(a,b,...arg){
+                console.log(a,b,arg);
+            }
+            foo(2,3,4,5,6,7,8);;
+        </script>
+</body>
+</html>

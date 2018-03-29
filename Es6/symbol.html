@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        string number boolean null undefined symbol
+        let obj = {
+            name:'zs',
+            age:18,
+        };
+//        symbol解决重名问题
+        let name = Symbol();
+        obj[name] = 'xx';
+
+        console.log(typeof(obj));//object
+        console.log(typeof name); //symbol
+
+        //遍历输出obj 取不到xx symbol()相当于一种保护
+        for(let p in obj){
+            console.log(p,obj[p]);
+        }
+        //[]能取到xx
+        console.log(obj[name]);
+        //取zx
+        console.log(obj['name']);
+
+        let age = Symbol();
+        obj[age] = 88;
+        console.log(obj);
+    </script>
+</body>
+</html>
