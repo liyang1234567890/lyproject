@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            let obj = new Proxy({
+                name:"xiaoming",
+
+            },{
+                get :function(target,key,property){
+                    console.log("get:"+key);
+                },
+                set:function(target,key,,value,receiever){
+                    console.log("set");
+                }
+            }
+            )
+            obj.name = "aaa";
+            console.log();
+        </script>
+</body>
+</html>

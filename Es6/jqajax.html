@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script src="./jquery-3.2.1.js"></script><!--。/表示当前目录 。。/表示上层目录-->
+         <script>
+             //jquery封装的ajax get()方法
+             $(function() {//url 地址
+                $.get('musicdata.json',  {
+//                     //data 键值对
+//                     username: 'zs',
+//                     age: 18
+               }, function (res) {//回调函数
+                     console.log(res);
+                     //业务逻辑代码
+                 }, 'json');//返回的字符串类型
+             })
+
+             //
+         </script>
+
+</body>
+</html>

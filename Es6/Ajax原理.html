@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>h1h1h1</h1>
+    <a href="#">baidu</a>
+
+    <ul id="music-list"></ul>
+    <div id="mydiv"></div>
+    <script>
+        let oUl = document.querySelector('#music-list');
+        //前后端传数据三种方式
+        //Ajax form表单 get()
+
+         //1.创建XMLHttpRequest 对象
+        var xmlhttp;
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else { // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //请求发送的地址   true同步异步 false
+        //2.服务器发送请求        后台会根据username age 传参数l
+        xmlhttp.open("GET", "musicdata.json?username=zhangsan&age=18", true);
+        xmlhttp.send();
+            //get  post区别
+            // get获取 参数在url上 不安全 在请求的头里面 小 会产生缓存
+            // post提交 在请求的body里面 传参
+
+        //3.服务器端响应k
+        //检测状态码
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//                document.getElementById("mydiv").innerHTML.responseText;
+//                console.log(xmlhttp.responseText);//本地
+                //业务逻辑代码
+                let json = JSON.parse(xmlhttp.responseText);//把字符串变成数组
+                let list = json.musicData;
+                console.log(list);
+                for(let item of list){
+                    oUl.innerHTML += `<li>${item.title}</li>`;
+                }
+            }
+        }
+//
+        /*
+        readystate值
+        0:已接收
+        1：就绪
+        2：请求
+        3：请求处理中
+        4：请求已完成，且响应
+        */
+           </script>
+</body>
+</html>

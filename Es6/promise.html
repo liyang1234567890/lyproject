@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./jquery-3.2.1.js"></script>
+        <script>//互相依赖 a请求完之后请求b 再请求c
+//        $.get('a.json',{},function(res){
+//            console.log(res);
+//            $.get('b.json',{},function(res){
+//                console.log(res);
+//                $.get('c.json',{},function(res){
+//                    console.log(res);
+//                })
+//            })
+//        },'json');
+        //promise解决嵌套麻烦 需求性差的麻烦 是用来管理ajax状态的
+//
+
+        let p1 = new Promise(function(resolve,reject){
+            $.get('a.json',{},function(res){
+                console.log(res);
+                if(res.a){
+                    resolve(res);
+                }
+                else{
+                    reject();
+                }
+
+            }); //第一个方法运行完之后 把结果res传给下一个方法
+        }).then(function(resa){
+            console.log('成功');
+            $.get('b.json',{},function(resb){
+                console.log(resb);
+            });
+//        }).then(function(resolve,reject) {
+//            $.get('c.json', {}, function (res) {
+//                console.log(res);
+//            });
+        }).catch(function(){
+            console.log('失败');
+        });
+//            let p1 = new Promise(function(resolve,reject){//2个方法  成功调用第一个方法
+//                setTimeout(function(){                      //失败调用第二个方法
+//                    resolve();
+//                },1000)
+//            }).then(function(){
+//                console.log("success");
+//            }).catch(function(){
+//                console.log("false");
+//            });
+        </script>
+</body>
+</html>
