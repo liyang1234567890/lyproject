@@ -6,15 +6,17 @@
 </head>
 <body>
         <div id="app">
-            <span v-if="this.isLogin">欢迎：唯创网讯</span>  <!--true是显示 false是根本没有 不是display:none  -->
-            <span>请登录</span>
+            <div v-if="testif == 'a'">a</div>
+            <div v-else-if="testif == 'b'">b</div>
+            <div v-else>c</div>
+            <div v-show="true">v-show</div>
         </div>
         <script src="vue.js"></script>
         <script>
             let vm = new Vue({
                 el:'#app',
                 data:{
-                    isLogin:false
+                    testif:"a",
                 }
 
             });

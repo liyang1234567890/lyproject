@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <div id ="app">
+            <div v-for=" (value,key,index) in obj  ">{{value}}:{{key}}:{{index}}</div>
+                </div>
+
+            <script src="vue.js"></script>
+            <script>
+
+            let vm= new Vue({
+                el:'#app',//扩展元素
+                data:{
+                   arr:[2,5,8,6,3,1],
+                    obj:[{
+                        name:"liyang",
+                        age:"18",
+                        school:"nkn"
+                    },{
+                        name:"liyang1",
+                        age:"18",
+                        school:"nkn"
+                    },{
+                        name:"liyang2",
+                        age:"18",
+                        school:"nkn"
+                    },{
+                        name:"liyang4",
+                        age:"18",
+                        school:"nkn"
+                    },{
+                        name:"liyang5",
+                        age:"18",
+                        school:"nkn"
+                    }]
+                }
+            });
+            </script>
+</body>
+</html>
