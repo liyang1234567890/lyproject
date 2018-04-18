@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <div id ="app">
+                  <div v-for=" in obj">
+                      name:{{val.name}} age:{{val.age}} school:{{val.school}}
+                  </div>
+            </div>
+
+            <div v-for="=vvalal in arr2">{{val}}</div>
+            <script src"vue.js"></script>
+            <script>
+
+            let vm= new Vue({
+                el:'#app',//扩展元素
+                computed:{
+                    obj2(){
+                       return this.arr.sort(function(a.age,b.age));
+                    }
+                },
+                data:{
+                   arr:[2,5,8,6,3,1],
+                    obj:[{
+                        name:"liyang",
+                        age:18,
+                        school:"nkn"
+                    },{
+                        name:"liyang1",
+                        age:18,
+                        school:"nkn"
+                    },{
+                        name:"liyang2",
+                        age:18,
+                        school:"nkn"
+                    },{
+                        name:"liyang4",
+                        age:18,
+                        school:"nkn"
+                    },{
+                        name:"liyang5",
+                        age:18,
+                        school:"nkn"
+                    }]
+                }
+            });
+            arr2();
+            </script>
+</body>
+</html>
