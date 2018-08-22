@@ -2,6 +2,7 @@
  * Created by Queen on 2018/4/11.
  */
 import css from './css/main.css';
+import sass from './css/style.scss';
 var a = 0;
 setTimeout(function(){
     var path = require("path");

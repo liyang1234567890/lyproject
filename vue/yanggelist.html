@@ -1,13 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>title</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+     <style>
+         #app .red{
+             background: #ff0000;
+         }
+     </style>
 </head>
 <body>
+        <h1 class="text-center">yanggelist</h1>
+        <div id="app">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr class="warning">
+                        <td>商品名称</td>
+                        <td>选择</td>
+                        <td>商品价格</td>
+                        <td>删除</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="product in productList" @click="select(product)" :class="{red:product.isSelected}">
+                        <td><input type ="checkbox"></td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td><button type="button" class="btn btn-warning  glyphicon glyphicon-remove  btn-xs"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn btn-danger    btn-xs">删除选中</button></td>
+                        <td colspan="3" class="text-center">总价:0元</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+        <script src="vue.js"></script>
+        <script>
+            new Vue({
+                el:'#app',
+                data:{
+                    productList:[{
+                        name:'衣服',
+                        price:123,
+                        isSelected:false,
+                    },{
+                        name:'裤子',
+                        price:456,
+                        isSelected:false,
+                    },{
+                        name:'鞋',
+                        price:444,
+                        isSelected:false,
+                     },{
+                        name:'帽子',
+                        price:666,
+                        isSelected:false,
+                    },{
+                        name:'手套',
+                        price:88,
+                        isSelected:false,
+                    }],
+                },
+                methods:{
+                    select(product){
+                        product.isSelected = !product.isSelected;
+                        if(product.isSelected){
+                            this.sun += product.price;
+                        }
+                    }
+                },
+                computed:{
 
+                }
+            });
+        </script>
 </body>
 </html>
