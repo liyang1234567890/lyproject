@@ -31,9 +31,9 @@
         #menu3{
             background: #0000ff;
         }
-      #menu3:target{      /*target是css的标签 用css执行会更快*/
+        /* #menu3:target{      /* target是css的标签 用css执行会更快 */
             background: #ffff00;;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -49,13 +49,13 @@
         <script src="jquery-3.3.1.js"></script>
         <script>
                  $(function(){
-//                     $('#nav li:last').on('click',function(){
-////                        alert(123);
-//                         setTimeout(function(){
-//                             $('#menu3:target').css('background','#ff0');//不会变黄
-//                             //一点击 函数就执行 target需要时间
-//                         },1000);
-//                     });
+                     $('#nav li:last').on('click',function(){
+                        //alert(123);
+                         setTimeout(function(){
+                             $('#menu3:target').css('background','#ff0');//不会变黄
+                             //一点击 函数就执行 target需要时间
+                         },1000);
+                      });
                  });
         </script>
 </body>

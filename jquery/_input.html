@@ -16,13 +16,15 @@
             <li>huawei</li>
             <li>xiaomi</li>
         </ul>
+        <input type="file">
         <script src="jquery-3.3.1.js"></script>
         <script>
             $(function(){
                 var $Lis = $('#list li');
                 $('#search').on('keyup',function(){//keyup当前值
-                   // console.log(this.value);//原生方法  效率高
+                 //console.log(this.value);//原生方法  效率高
                   //  console.log($(this).val());//jq方法'
+                  console.log($Lis);
                     $('#list li').css('background','transparent');
                     if(this.value != ''){
                         //this.value 要字符串拼接 $('#list li:contains(this.value)') 不行得把this.value字符串拼接
