@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+         /* div:nth-child(2),div:nth-child(7){
+            color:red;
+        } */
+    </style>
 </head>
 <body>
-    <li>aaa</li>
+        <!-- <h1>标题</h1>
+        <p>这是锻若</p>
+        <p>这是锻若</p>
+        <span>这是span</span>
+        <span>这是span</span>
+        <span>这是span</span>
+        <p>这是锻若</p> -->
+
+        <div class="test">
+                <p>A元素</p>
+                <div>B元素</div>
+                <p>C元素</p>
+                <p>D元素</p>
+        </div>
+        <script src="jquery-3.3.1.js"></script>
+        <script>
+            $('p:nth-of-type(2)').css('background','green');
+            $('div:nth-child(2)').css('background','red');
+        </script>
+
 </body>
 </html>
