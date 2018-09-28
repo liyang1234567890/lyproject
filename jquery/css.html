@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 2000px;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /* padding: 10px;
+            border: 10px solid;
+            margin-left: 10px; */
+            position: relative;
+            top: 100px;
+            left: 100px;
+            /* margin-left: 20px;  */
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+
+    <div id="div3"></div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            var $div1 = $('#div1');
+            var $div2 = $('#div2');
+            // console.log('width=' + $div1.width());
+            // console.log('innerWidth=' + $div1.innerWidth());
+            // console.log('outerWidth=' + $div1.outerWidth(true));4
+
+            // $div2.offset({
+            //     top: 20,
+            //     left: 20
+            // });
+            // console.log($div2.offset());
+            // console.log($div2.position());
+            // console.log($div2.offsetParent());
+
+            // $(window).scrollTop(500);
+            // $(window).on('scroll',function(){
+            //     console.log($(this).scrollTop());
+            // });
+
+             var $div4 = $('<div id="div4"></div>');
+             $('#div3').append($div4);
+        });
+    </script>
+</body>
+</html>
+qqq
