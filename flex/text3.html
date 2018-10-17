@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .aside{
+            float: left;
+            width: 200px;
+            background-color: red;
+        }
+        .content{
+            margin-left: 200px;
+            background-color: blue;
+        } */
+
+        /* .aside{
+        float: left;
+        margin-right: -200px;
+        width: 200px;
+        background-color: red;
+        }
+        .content{
+            float: right;
+        }
+        .content .inner{
+            margin-left: 200px;
+            background-color: blue;
+        } */
+
+        /* .aside{
+            float: left;
+            width: 200px;
+            background-color: red;
+        }
+        .content{
+            calc:(100% - 200px);
+            background-color: blue;
+        } */
+
+        /* .container{
+        display: flex;
+    }
+    .aside{
+        flex: 0 0 200px;
+        background-color: red;
+    }
+    .content{
+        flex: 1;
+        background-color: blue;
+    } */
+
+        /* .aside{
+        width: 200px;
+        float: left;
+        background-color: red;
+    }
+
+    .content{
+        overflow: hidden;
+        background-color: blue;
+    } */
+
+        /* .container{
+            display: flex;
+            width: 500px;
+            height: 200px;
+        }
+        .left{
+            flex:1;
+            background: red;
+        }
+        .middle{
+            flex:1;
+            background: green;
+        }
+        .right{
+            flex:1;
+            background: blue;
+        } */
+
+        /* .container{
+            display: flex;
+            height: 300px;
+        }
+
+        .right{
+            flex:1;
+            background-color: blue;
+        } */
+
+        .container{
+            display: flex;
+            height: 300px;
+            width: 300px;
+            flex-direction: column;
+        }
+        .row{
+            display: flex;
+            height: 100px;
+        }
+        .left{
+            flex: 1;
+            height: 100px;
+            border: 1px solid red;
+        }
+        .middle{
+            flex: 1;
+            height: 100px;
+            border: 1px solid green;
+        }
+        .right{
+            flex: 1;
+            height: 100px;
+            border: 1px solid blue;
+        }
+
+        /* *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+        .header{
+            background: red;
+            flex: 0 0 100px;
+        }
+        .content{
+            display: flex;
+            flex:1;
+        }
+        .content-left{
+            flex: 0 0 100px;
+            background: green;
+        }
+        .content-right{
+            flex: 0 0 100px;
+            background: pink;
+        }
+        .content-middle{
+            flex:1;
+        }
+        .footer{
+            background: yellow;
+            flex: 0 0 100px;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <div class="aside">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore provident dolor in voluptatum tempore non, placeat obcaecati totam ut delectus libero excepturi distinctio asperiores odit nobis soluta, esse aspernatur beatae.
+    </div>
+    <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore provident dolor in voluptatum tempore non, placeat obcaecati totam ut delectus libero excepturi distinctio asperiores odit nobis soluta, esse aspernatur beatae.
+    </div> -->
+
+    <!-- <div class="aside">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore provident dolor in voluptatum tempore non, placeat obcaecati totam ut delectus libero excepturi distinctio asperiores odit nobis soluta, esse aspernatur beatae.
+    </div>
+    <div class="content">
+        <div class="inner">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore provident dolor in voluptatum tempore non, placeat obcaecati totam ut delectus libero excepturi distinctio asperiores odit nobis soluta, esse aspernatur beatae.
+        </div>
+    </div> -->
+
+    <!-- <div class="container">
+        <div class="aside">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore provident dolor in voluptatum tempore non, placeat obcaecati totam ut delectus libero excepturi distinctio asperiores odit nobis soluta, esse aspernatur beatae.
+        </div>
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore provident dolor in voluptatum tempore non, placeat obcaecati totam ut delectus libero excepturi distinctio asperiores odit nobis soluta, esse aspernatur beatae.
+        </div>
+    </div> -->
+
+    <!-- <div class="container">
+        <div class="left">qqq</div>
+
+        <div class="right">wwww</div>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+        <div class="row">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+        <div class="row">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+
+    <!-- <div class="container">
+        <div class="header">Header</div>
+        <div class="content">
+            <div class="content-left">Left</div>
+            <div class="content-middle">Center</div>
+            <div class="content-right">Right</div>
+        </div>
+        <div class="footer">Footer</div>
+    </div> -->
+   <script>
+        // var a=true+10;
+        // console.log(a);
+    </script>
+</body>
+</html>

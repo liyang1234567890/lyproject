@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Object.prototype.toString.call(123)) //[object Number]
+        console.log(Object.prototype.toString.call('123')) //[object String]
+        console.log(Object.prototype.toString.call(undefined)) //[object Undefined]
+        console.log(Object.prototype.toString.call(true)) //[object Boolean]
+        console.log(Object.prototype.toString.call({})) //[object Object]
+        console.log(Object.prototype.toString.call([])) //[object Array]
+        console.log(Object.prototype.toString.call(function(){})) //[object Function]
+
+        // function f1(){
+        //     var a=1;
+        //     function f2(){
+        //         alert(a);
+        //         var a=2;
+        //         alert(a);
+
+        //     }
+        //     f2();
+        // }
+        // f1();
+
+        //数组转化成对象
+        var obj = new Object();
+        var arr = [1,2,3,4,5];
+        for (var x in arr){
+            obj[x] = arr[x];
+        }
+        console.log(obj);
+
+        //对象转化成数组
+        var arr = [];
+        var obj= {
+            name: 'liyang',
+            age: 22
+        }
+        for (var i in obj) {
+            arr.push(obj[i]); //属性
+            //arr.push(object[i]); //值
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>
